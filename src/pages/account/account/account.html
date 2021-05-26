@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar color="header">
+    <button ion-button menuToggle>
+      <ion-icon name="menu">
+      </ion-icon>
+    </button>
+    <ion-title text-wrap text-center>{{"My Account" | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen="true" slot="fixed" >
+  
+  <ion-spinner *ngIf="!customers" name="crescent" style="display:block; margin-left: auto; margin-right:auto; margin-top: 5px; margin-bottom:5px" ></ion-spinner>
+
+  <div *ngIf="customers" class="customer">
+    <div *ngIf="customers.customer.billing_address">
+      <div class="card" style="background-image: url(../../../assets/image/medical.jpg);">
+        <div class="header">
+          <div class="avatar" *ngIf="checkAvatar()=='false'">
+            <img src="../../../assets/image/avatar.png" alt="">
+          </div>
+          <div class="avatar" *ngIf="checkAvatar()!='false'">
+            <img src="{{customers.customer.avatar_url}}"/>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="user-meta ion-text-center">
+            <h3 class="playername"> {{customers.customer.billing_address.first_name}} {{customers.customer.billing_address.last_name}}<br *ngIf="customers.customer.billing_address.first_name"></h3>
+            <h5 class="country">{{customers.customer.role}}</h5>
+            
+          </div>
+        </div>
+      </div>
+
+      <ion-card>
+        <ion-card-header style="background-color: #ebebeb"> 
+          {{"BillingAddress" | translate}}
+        </ion-card-header>
+        <ion-card-content style="margin-top: 10px">
+          {{customers.customer.billing_address.first_name}} {{customers.customer.billing_address.last_name}}<br *ngIf="customers.customer.billing_address.first_name">
+          {{customers.customer.billing_address.address_1}}<br *ngIf="customers.customer.billing_address.address_1">
+          {{customers.customer.billing_address.address_2}}<br *ngIf="customers.customer.billing_address.address_2">
+          {{customers.customer.billing_address.city}} {{customers.customer.billing_address.state}}<br *ngIf="customers.customer.billing_address.city">
+          {{customers.customer.billing_address.phone}}<br *ngIf="customers.customer.billing_address.phone">
+          {{customers.customer.billing_address.email}}<br *ngIf="customers.customer.billing_address.email">
+          {{customers.customer.billing_address.country}} {{customers.customer.billing_address.postcode}}<br *ngIf="customers.customer.billing_address.postcode">
+        </ion-card-content>
+      </ion-card>
+
+      <div *ngIf="customers.customer.shipping_address">
+        <ion-card>
+          <ion-card-header style="background-color: #ebebeb">
+            {{"ShippingAddress" | translate}}
+          </ion-card-header>
+          <ion-card-content style="margin-top: 10px">
+            {{customers.customer.shipping_address.first_name}} {{customers.customer.shipping_address.last_name}}<br
+              *ngIf="customers.customer.shipping_address.first_name">
+            {{customers.customer.shipping_address.address_1}}<br *ngIf="customers.customer.shipping_address.address_1">
+            {{customers.customer.shipping_address.address_2}}<br *ngIf="customers.customer.shipping_address.address_2">
+            {{customers.customer.shipping_address.city}} {{customers.customer.shipping_address.state}}<br
+              *ngIf="customers.customer.shipping_address.city">
+            {{customers.customer.shipping_address.phone}}<br *ngIf="customers.customer.shipping_address.phone">
+            {{customers.customer.shipping_address.email}}<br *ngIf="customers.customer.shipping_address.email">
+            {{customers.customer.shipping_address.country}} {{customers.customer.shipping_address.postcode}}<br>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

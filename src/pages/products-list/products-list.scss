@@ -1,0 +1,94 @@
+ion-slides {
+  height: auto;
+}
+page-products-list {
+  .swiper-container {
+    height: auto;
+  }
+  .ion-slides {
+    height: auto;
+  }
+  .heading {
+    position: absolute;
+
+    //   font-size: 1.5rem;
+    //   padding: 5px 10px;
+    //   background: #1e88e5e6;
+    //   color: #fff;
+    //   font-weight: bold;
+    //   opacity: 0.9;
+    //   box-shadow: 1px 2px 7px 2px #6c6b6b;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    color: black;
+    font-weight: bold;
+    left: 5px;
+  }
+  .icon-whatsapp {
+    color: #00bb2d;
+  }
+  .ion-md-call {
+    color: red;
+  }
+  //banner image
+  .card-title {
+    position: absolute;
+    top: 20%;
+    font-size: 20px;
+    width: 100%;
+    font-weight: bold;
+    color: #fff;
+  }
+  .card-search {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+  }
+  .searchbar-md .searchbar-input {
+    padding: 6px 55px;
+    text-align: left;
+  }
+  .item-md p {
+    margin: 0 0 2px;
+    overflow: inherit;
+    font-size: 1.3rem;
+    line-height: normal;
+    text-overflow: inherit;
+    color: #000;
+    font-weight: bold;
+    width: 100%;
+  }
+  .swiper-slide img {
+    filter: brightness(0.5);
+  }
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    padding: 0 !important;
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .list-ios {
+    width: inherit !important;
+    & .item-block * {
+      text-align: center !important;
+      justify-content: center;
+    }
+  }
+
+  .heading {
+    text-align: center !important;
+    width: 100%;
+  }
+
+  .blue-stripe {
+    background-color: #3494e8;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+}

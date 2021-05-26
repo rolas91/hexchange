@@ -1,0 +1,7 @@
+{
+  "name": "WooCommerce",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
